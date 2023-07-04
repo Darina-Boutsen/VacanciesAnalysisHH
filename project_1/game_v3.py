@@ -4,9 +4,10 @@ import numpy as np
 
 def game_core_v3(number: int = 1) -> int:
     """
-    First we get a random number, then we determine in what quater of the number 100 is the number.
-    Then we create new random number in this quater and increase or decrease it depending on
-    wheather it is more or less than the specified one.
+    First we create list (from 1 to 100), then we search middle element of our list.
+    If the guessable number is not the middle number, we will search in left or right parts of our list
+    depending on less or more the guessable number than our mibble number.
+    Then we search a new middle number in chosen part and repeat the algorithm.
         The function takes a guessable number and returns the number of attempts.
 
     Args:
@@ -17,37 +18,22 @@ def game_core_v3(number: int = 1) -> int:
     """
     
     
-    count = 0
-    predict = np.random.randint(1, 101)
-
-    while number != predict:
+    count = 1
+    a = range(1, 101)
+ 
+    mid = len(a) // 2
+    low = 0
+    high = len(a) - 1
+ 
+    while a[mid] != number and low <= high:
         count += 1
-        if number > 50:
-            if number > 75:
-                predict = np.random.randint(76, 101)
-                if number > predict:
-                    predict += 1
-                elif number < predict:
-                    predict -= 1
-            else:
-                predict = np.random.randint(51, 76)
-                if number > predict:
-                    predict += 1
-                elif number < predict:
-                    predict -= 1
+        if number > a[mid]:
+            low = mid + 1
+            count += 1
         else:
-            if number < 25:
-                predict = np.random.randint(1, 26)
-                if number > predict:
-                    predict += 1
-                elif number < predict:
-                    predict -= 1
-            else:
-                predict = np.random.randint(26, 50) 
-                if number > predict:
-                    predict += 1
-                elif number < predict:
-                    predict -= 1
+            high = mid - 1
+            count += 1
+        mid = (low + high) // 2
 
     # Output the result
     return count
