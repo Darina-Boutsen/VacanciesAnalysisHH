@@ -2,38 +2,37 @@
 
 import numpy as np
 
-def game_core_v3(number: int = 1) -> int:
+def game_core_v3(number: int = np.random.randint(1, 101)) -> int:
     """
-    First we create list (from 1 to 100), then we search middle element of our list.
-    If the guessable number is not the middle number, we will search in left or right parts of our list
-    depending on less or more the guessable number than our mibble number.
-    Then we search a new middle number in chosen part and repeat the algorithm.
+    Randomly guess a number
         The function takes a guessable number and returns the number of attempts.
 
     Args:
-        number (int, optional): Guessable number. Defaults to 1.
+        number (int, optional): Guessable number.
 
     Returns:
-        int: Number of attempts
+        int: Number of attempts.
     """
     
     
-    count = 1
-    a = range(1, 101)
+    count = 0
+    min_number = 0
+    max_number = 100
+    predict_number = np.random.randint(1, 101)
  
-    mid = len(a) // 2
-    low = 0
-    high = len(a) - 1
- 
-    while a[mid] != number and low <= high:
+    while True:
         count += 1
-        if number > a[mid]:
-            low = mid + 1
-            count += 1
+        
+        if predict_number > number:
+            max_number = predict_number - 1
+            predict_number = (max_number + min_number) // 2
+
+        elif predict_number < number:
+            min_number = predict_number + 1
+            predict_number = (max_number + min_number) // 2
+            
         else:
-            high = mid - 1
-            count += 1
-        mid = (low + high) // 2
+            break #end of the game
 
     # Output the result
     return count
