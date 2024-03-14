@@ -1,12 +1,22 @@
-# Data science cource
-From the [Skillfactory Data Sience course](https://skillfactory.ru/data-scientist-pro)
+<center> <img src = https://raw.githubusercontent.com/AndreyRysistov/DatasetsForPandas/main/hh%20label.jpg alt="drawing" style="width:400px;">
 
-## Education
+# Проект: Анализ вакансий из HeadHunter с помощью БД SQL
 
-* [PY-10_Intro_in_Pandas](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/PY-10_Intro_in_Pandas)
-* [PY-11_Base_Pandas](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/PY-11_Base_Pandas)
-* [PY-12_Advanced_Pandas](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/PY-12_Advanced_Pandas)
-* [PY-13_Visualisation](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/PY-13_Visualisation)
-* [PY-14_Data_Cleaning](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/PY-14_Data_Cleaning)
-* [PY-15_OOP_methods](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/PY-15_OOP_methods)
-* [Bonus_Markdown&Git](https://github.com/Darina-Boutsen/Skillfactory/tree/master/Skillfactory/Bonus_Markdown%26Git)
+Все необходимые таблицы находятся в схеме public базы данных project_sql.
+
+⭐ Представьте, что вы устроились на работу в кадровое агентство, которое подбирает вакансии для IT-специалистов. Ваш первый проект — создание 
+модели машинного обучения, которая будет рекомендовать вакансии клиентам агентства, претендующим на позицию Data Scientist. Сначала вам 
+необходимо понять, что из себя представляют данные и насколько они соответствуют целям проекта. В литературе эта часть работы над ML-проектом 
+называется Data Understanding, или анализ данных.
+
+Данный проект состоит из четырёх этапов исследования данных:
+- Предварительный анализ данных;
+- Детальный анализ вакансий;
+- Анализ работодателей;
+- Предметный анализ.
+
+С кодом проекта можно ознакомиться [здесь](https://github.com/Darina-Boutsen/VacanciesAnalysisHH/blob/masterVA/VacanciesAnalysis/Project_2.ipynb).
+
+## Использованные инструменты и библиотеки
+* psycopg2 (2.9.9)
+* pandas (2.0.3)
